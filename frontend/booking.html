@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session — BAM Musical & Video Studio</title>
+    <meta name="description"
+        content="Book your studio session at BAM Studio. Select your service, date, time slot, and pay securely online with Paystack.">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js" defer></script>
+    <script src="https://js.paystack.co/v1/inline.js" defer></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-10" data-aos>
+                <span class="badge badge-orange mb-4 text-sm">Online Booking</span>
+                <h1 class="section-title mb-3">Book a <span class="neon-text">Studio Session</span></h1>
+                <p class="text-slate-400">Fill in your details below to reserve your spot. Instant confirmation after
+                    payment.</p>
+            </div>
+
+            <!-- Step Indicators -->
+            <div class="step-indicator" id="stepIndicator">
+                <div class="step active" id="s1">1</div>
+                <div style="height:2px;width:60px;background:var(--dark-border);align-self:center;border-radius:2px"
+                    id="line1"></div>
+                <div class="step" id="s2">2</div>
+                <div style="height:2px;width:60px;background:var(--dark-border);align-self:center;border-radius:2px"
+                    id="line2"></div>
+                <div class="step" id="s3">3</div>
+            </div>
+
+            <!-- STEP 1: Service & Schedule -->
+            <div id="step1" class="card p-8">
+                <h2 class="text-xl font-bold mb-6">Step 1: Choose Service & Schedule</h2>
+                <div class="space-y-5">
+                    <div class="form-group">
+                        <label class="form-label" for="service">Service Type *</label>
+                        <select id="service" class="form-input">
+                            <option value="">Select a service</option>
+                            <option value="Recording Studio">🎙️ Music Recording — ₦10,000/hr</option>
+                            <option value="Video Studio">🎬 Video Production — ₦15,000/hr</option>
+                            <option value="Podcast Studio">🎧 Podcast Recording — ₦8,000/hr</option>
+                            <option value="Mixing & Mastering">🎚️ Mixing & Mastering — ₦12,000/hr</option>
+                            <option value="Voice-over Studio">🎤 Voice-over Studio — ₦7,000/hr</option>
+                        </select>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div class="form-group" id="calendarGroup" style="display:none">
+                        <label class="form-label">Select Date *</label>
+                        <div class="card p-5">
+                            <div class="flex items-center justify-between mb-4">
+                                <button id="prevMonth" class="btn-outline"
+                                    style="padding:.4rem .8rem;font-size:.8rem">‹</button>
+                                <span id="monthLabel" class="font-semibold text-sm"></span>
+                                <button id="nextMonth" class="btn-outline"
+                                    style="padding:.4rem .8rem;font-size:.8rem">›</button>
+                            </div>
+                            <div class="grid grid-cols-7 gap-1 mb-2 text-center">
+                                <div class="text-xs text-slate-500 font-medium">Su</div>
+                                <div class="text-xs text-slate-500 font-medium">Mo</div>
+                                <div class="text-xs text-slate-500 font-medium">Tu</div>
+                                <div class="text-xs text-slate-500 font-medium">We</div>
+                                <div class="text-xs text-slate-500 font-medium">Th</div>
+                                <div class="text-xs text-slate-500 font-medium">Fr</div>
+                                <div class="text-xs text-slate-500 font-medium">Sa</div>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid"></div>
+                            <div id="selectedDateDisplay" class="text-center text-sm mt-3 text-slate-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Time Slots -->
+                    <div class="form-group" id="timeGroup" style="display:none">
+                        <label class="form-label">Select Time Slot *</label>
+                        <div class="grid grid-cols-3 sm:grid-cols-4 gap-2" id="timeSlots"></div>
+                    </div>
+
+                    <!-- Duration -->
+                    <div class="form-group" id="durationGroup" style="display:none">
+                        <label class="form-label" for="duration">Session Duration (hours) *</label>
+                        <select id="duration" class="form-input">
+                            <option value="2">2 Hours</option>
+                            <option value="3">3 Hours</option>
+                            <option value="4">4 Hours</option>
+                            <option value="5">5 Hours</option>
+                            <option value="6">6 Hours (Half Day)</option>
+                            <option value="12">12 Hours (Full Day)</option>
+                        </select>
+                    </div>
+
+                    <!-- Price preview -->
+                    <div id="pricePreview" class="card p-5 text-center"
+                        style="display:none;border-color:rgba(249,115,22,.3);background:rgba(249,115,22,.05)">
+                        <div class="text-slate-400 text-sm mb-1">Estimated Total</div>
+                        <div class="text-4xl font-black neon-text" id="totalPrice">₦0</div>
+                        <div class="text-slate-500 text-xs mt-1" id="priceBreakdown"></div>
+                    </div>
+                </div>
+                <button id="step1Next" class="btn-primary w-full mt-6">Continue →</button>
+            </div>
+
+            <!-- STEP 2: Personal Details -->
+            <div id="step2" class="card p-8" style="display:none">
+                <h2 class="text-xl font-bold mb-6">Step 2: Your Details</h2>
+                <div class="space-y-5">
+                    <div class="form-group">
+                        <label class="form-label" for="custName">Full Name *</label>
+                        <input type="text" id="custName" class="form-input" placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="custEmail">Email Address *</label>
+                        <input type="email" id="custEmail" class="form-input" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="custPhone">Phone Number *</label>
+                        <input type="tel" id="custPhone" class="form-input" placeholder="+234 800 000 0000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="bookingNotes">Special Requests (optional)</label>
+                        <textarea id="bookingNotes" class="form-input" rows="3"
+                            placeholder="Any special requirements, equipment needs, etc."></textarea>
+                    </div>
+                    <!-- Summary -->
+                    <div class="card p-5 space-y-2" style="border-color:rgba(249,115,22,.2)">
+                        <h4 class="font-semibold text-sm mb-3 neon-text">Booking Summary</h4>
+                        <div class="flex justify-between text-sm text-slate-400"><span>Service</span><span
+                                id="sumService" class="text-white font-medium">—</span></div>
+                        <div class="flex justify-between text-sm text-slate-400"><span>Date</span><span id="sumDate"
+                                class="text-white font-medium">—</span></div>
+                        <div class="flex justify-between text-sm text-slate-400"><span>Time</span><span id="sumTime"
+                                class="text-white font-medium">—</span></div>
+                        <div class="flex justify-between text-sm text-slate-400"><span>Duration</span><span
+                                id="sumDuration" class="text-white font-medium">—</span></div>
+                        <div class="border-t pt-2 mt-2 flex justify-between font-bold"
+                            style="border-color:var(--dark-border)"><span>Total</span><span class="neon-text"
+                                id="sumTotal">—</span></div>
+                    </div>
+                </div>
+                <div class="flex gap-4 mt-6">
+                    <button id="step2Back" class="btn-outline flex-1">← Back</button>
+                    <button id="step2Next" class="btn-primary flex-1">Proceed to Payment →</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Payment -->
+            <div id="step3" class="card p-8" style="display:none">
+                <h2 class="text-xl font-bold mb-6">Step 3: Payment</h2>
+                <div class="space-y-4">
+                    <div class="card p-5" style="border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.05)">
+                        <div class="flex items-center gap-3">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-sm">Secure Payment via Paystack</div>
+                                <div class="text-slate-400 text-xs">256-bit SSL encrypted. Your payment info is safe.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-5 space-y-2" style="border-color:rgba(249,115,22,.2)">
+                        <h4 class="font-semibold text-sm mb-3 neon-text">Order Summary</h4>
+                        <div class="flex justify-between text-sm text-slate-400"><span>Service</span><span
+                                id="payService" class="text-white">—</span></div>
+                        <div class="flex justify-between text-sm text-slate-400"><span>Date & Time</span><span
+                                id="payDateTime" class="text-white">—</span></div>
+                        <div class="flex justify-between text-sm text-slate-400"><span>Duration</span><span
+                                id="payDuration" class="text-white">—</span></div>
+                        <div class="border-t pt-2 flex justify-between font-bold text-lg"
+                            style="border-color:var(--dark-border)">
+                            <span>Amount Due</span><span class="neon-text" id="payTotal">—</span>
+                        </div>
+                    </div>
+                    <div id="paymentLoading" class="text-center py-4 hidden">
+                        <div class="spinner mx-auto mb-2"></div>
+                        <div class="text-slate-400 text-sm">Processing your payment...</div>
+                    </div>
+                </div>
+                <div class="flex gap-4 mt-6">
+                    <button id="step3Back" class="btn-outline flex-1">← Back</button>
+                    <button id="payBtn" class="btn-primary flex-1 text-lg">
+                        💳 Pay Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- SUCCESS -->
+            <div id="stepSuccess" class="card p-12 text-center" style="display:none">
+                <div class="text-7xl mb-4 animate-bounce">🎉</div>
+                <h2 class="text-3xl font-bold mb-3">Booking <span class="neon-text">Confirmed!</span></h2>
+                <p class="text-slate-400 mb-6">Your session has been booked and payment received. Check your email for
+                    confirmation details.</p>
+                <div class="card p-5 mb-6 text-left" style="border-color:rgba(249,115,22,.2)">
+                    <div id="confirmDetails" class="space-y-2 text-sm text-slate-400"></div>
+                </div>
+                <div class="flex gap-3 justify-center flex-wrap">
+                    <a href="/dashboard.html" class="btn-primary">View My Bookings</a>
+                    <a href="/" class="btn-outline">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <div class="toast" id="toast"></div>
+    <script type="module" src="/src/booking.js"></script>
+</body>
+
+</html>

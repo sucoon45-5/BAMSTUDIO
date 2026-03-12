@@ -1,0 +1,29 @@
+- [ ] Planning
+  - [ ] Requirements gathering and system design
+  - [ ] Implementation plan creation
+- [ ] Setup
+  - [ ] Initialize Frontend (Vite + Vanilla JS + Tailwind)
+  - [ ] Initialize Backend (Node.js + Express + MySQL)
+- [ ] Database
+  - [ ] Setup MySQL connection
+  - [ ] Create Users, Bookings, Payments tables
+- [ ] Backend API
+  - [ ] Authentication (Login/Register JWT)
+  - [ ] Booking Routes
+  - [ ] Payment Routes (Paystack integration)
+  - [ ] Admin Routes
+- [ ] Frontend Core Pages
+  - [ ] Router Setup
+  - [ ] Homepage (Hero video, GSAP animations, CTA)
+  - [ ] About Page
+  - [ ] Pricing Page
+- [ ] Frontend Booking & Payment
+  - [ ] Booking Flow UI (Date, time, room, service)
+  - [ ] Paystack Inline implementation
+- [ ] Dashboards
+  - [ ] User Dashboard
+  - [ ] Admin Dashboard
+- [ ] Polish & Verification
+  - [ ] Responsive design check
+  - [ ] E2E Testing
+  - [ ] Final UI/UX review

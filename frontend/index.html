@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAM Musical & Video Studio — Home</title>
+  <meta name="description"
+    content="BAM Musical & Video Studio — Nigeria's premier recording, video production, mixing & mastering studio. Book your session today.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/main.js" defer></script>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar py-4 px-6" id="navbar">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+          style="background:linear-gradient(135deg,#f97316,#f59e0b)">
+          <span class="font-black text-black text-lg">B</span>
+        </div>
+        <span class="font-extrabold text-lg tracking-tight">BAM <span class="neon-text">Studio</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/pricing.html" class="nav-link">Pricing</a>
+        <a href="/gallery.html" class="nav-link">Gallery</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/login.html" class="btn-outline" style="padding:.6rem 1.3rem;font-size:.875rem">Login</a>
+        <a href="/booking.html" class="btn-primary" style="padding:.65rem 1.5rem;font-size:.875rem">Book Now</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white p-2" aria-label="Menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button id="closeMenu" class="absolute top-6 right-6 text-white">
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <a href="/" class="text-2xl font-bold text-white">Home</a>
+    <a href="/about.html" class="text-2xl font-bold text-white">About</a>
+    <a href="/pricing.html" class="text-2xl font-bold text-white">Pricing</a>
+    <a href="/gallery.html" class="text-2xl font-bold text-white">Gallery</a>
+    <a href="/contact.html" class="text-2xl font-bold text-white">Contact</a>
+    <a href="/booking.html" class="btn-primary">Book a Session</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <!-- Video Background -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <!-- Glow Orbs -->
+    <div class="glow-orb"
+      style="width:600px;height:600px;background:radial-gradient(circle,#f97316,transparent);top:-200px;right:-100px;">
+    </div>
+    <div class="glow-orb"
+      style="width:500px;height:500px;background:radial-gradient(circle,#a855f7,transparent);bottom:-100px;left:-150px;animation-delay:-3s;">
+    </div>
+
+    <div class="hero-content max-w-5xl mx-auto px-6">
+      <div class="inline-flex items-center gap-2 badge badge-orange mb-6 text-sm" data-aos>
+        <span
+          style="width:7px;height:7px;background:var(--neon);border-radius:50%;animation:pulse 1.5s infinite"></span>
+        Now Booking Sessions
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight" data-aos>
+        Where Music Meets<br><span class="neon-text">Excellence</span>
+      </h1>
+      <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto" data-aos style="transition-delay:.15s">
+        BAM Musical & Video Studio — Nigeria's premier destination for world-class recording,
+        cinematic video production, and audio mastering.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center" data-aos style="transition-delay:.3s">
+        <a href="/booking.html" class="btn-primary text-lg">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Book a Session
+        </a>
+        <a href="/pricing.html" class="btn-outline text-lg">View Studio Pricing</a>
+      </div>
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-8 mt-16 max-w-xl mx-auto" data-aos style="transition-delay:.45s">
+        <div class="stat-box">
+          <div class="stat-number neon-text">500+</div>
+          <div class="text-slate-400 text-sm">Tracks Produced</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number neon-text">200+</div>
+          <div class="text-slate-400 text-sm">Happy Artists</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number neon-text">8+</div>
+          <div class="text-slate-400 text-sm">Years of Excellence</div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll Indicator -->
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-60 animate-bounce">
+      <span class="text-xs text-slate-400">Scroll Down</span>
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="py-24 px-6" id="services">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16" data-aos>
+        <span class="badge badge-orange mb-4 text-sm">Our Services</span>
+        <h2 class="section-title mb-4">Craft Your <span class="neon-text">Sound & Vision</span></h2>
+        <p class="section-sub">From raw talent to polished masterpiece — we provide every service your creative journey
+          demands.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service Cards -->
+        <div class="card p-8" data-aos>
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
+            style="background:rgba(249,115,22,.15)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
+              <path
+                d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12-3c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zM9 10l12-3" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Music Recording</h3>
+          <p class="text-slate-400 leading-relaxed">Professional multi-track recording in acoustically treated booths
+            with industry-grade microphones and preamps.</p>
+          <div class="mt-4 text-sm font-semibold neon-text">₦10,000 / hour →</div>
+        </div>
+        <div class="card p-8" data-aos style="transition-delay:.1s">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
+            style="background:rgba(168,85,247,.15)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2">
+              <path
+                d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.899L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Video Production</h3>
+          <p class="text-slate-400 leading-relaxed">Cinematic music videos, artist shoots, and visual content crafted by
+            our expert cinematography team.</p>
+          <div class="mt-4 text-sm font-semibold neon-purple">₦15,000 / hour →</div>
+        </div>
+        <div class="card p-8" data-aos style="transition-delay:.2s">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
+            style="background:rgba(6,182,212,.15)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2">
+              <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" />
+              <path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Podcast Recording</h3>
+          <p class="text-slate-400 leading-relaxed">Soundproof podcast suites with multi-host setups, remote guest
+            integration, and post-production editing.</p>
+          <div class="mt-4 text-sm font-semibold" style="color:var(--neon-cyan)">₦8,000 / hour →</div>
+        </div>
+        <div class="card p-8" data-aos style="transition-delay:.3s">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
+            style="background:rgba(249,115,22,.15)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Mixing & Mastering</h3>
+          <p class="text-slate-400 leading-relaxed">Industry-standard mixing and mastering that makes your tracks ready
+            for Spotify, Apple Music, and beyond.</p>
+          <div class="mt-4 text-sm font-semibold neon-text">₦12,000 / hour →</div>
+        </div>
+        <div class="card p-8" data-aos style="transition-delay:.4s">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
+            style="background:rgba(168,85,247,.15)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path
+                d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-3.74-7.14-7.2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Voice-over Recording</h3>
+          <p class="text-slate-400 leading-relaxed">Crystal-clear voice-over suites for commercials, audiobooks,
+            dubbing, and broadcast media.</p>
+          <div class="mt-4 text-sm font-semibold neon-purple">₦7,000 / hour →</div>
+        </div>
+        <div class="card p-8 flex flex-col items-center justify-center text-center" data-aos
+          style="transition-delay:.5s;background:linear-gradient(135deg,rgba(249,115,22,.07),rgba(245,158,11,.07));border-color:rgba(249,115,22,.3)">
+          <div class="text-5xl mb-4">🎵</div>
+          <h3 class="text-xl font-bold mb-3">Custom Package?</h3>
+          <p class="text-slate-400 mb-5">Have a unique production need? Let's create a personalized studio package for
+            you.</p>
+          <a href="/contact.html" class="btn-primary" style="font-size:.875rem;padding:.65rem 1.5rem">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY BAM STUDIO -->
+  <section class="py-24 px-6" style="background:linear-gradient(180deg,transparent,rgba(249,115,22,.03),transparent)">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+          <span class="badge badge-orange mb-4 text-sm">Why Choose Us</span>
+          <h2 class="section-title mb-6">Built for <span class="neon-text">Artists</span> Who Demand the Best</h2>
+          <p class="text-slate-400 leading-relaxed mb-8">At BAM Studio, we don't just record — we craft sonic
+            experiences. Our state-of-the-art equipment combined with our seasoned engineers ensures every project
+            reaches its full potential.</p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5"
+                style="background:rgba(249,115,22,.15)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="#f97316" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></div>
+              <div>
+                <div class="font-semibold mb-1">SSL & Neve Mixing Consoles</div>
+                <div class="text-slate-400 text-sm">Authentic analog warmth with digital precision.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5"
+                style="background:rgba(249,115,22,.15)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="#f97316" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></div>
+              <div>
+                <div class="font-semibold mb-1">Acoustically Treated Rooms</div>
+                <div class="text-slate-400 text-sm">Zero unwanted reflections. Pure, clean sound capture.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5"
+                style="background:rgba(249,115,22,.15)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="#f97316" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></div>
+              <div>
+                <div class="font-semibold mb-1">Award-Winning Engineers</div>
+                <div class="text-slate-400 text-sm">Seasoned professionals who understand your artistic vision.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5"
+                style="background:rgba(249,115,22,.15)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="#f97316" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></div>
+              <div>
+                <div class="font-semibold mb-1">24-Hour Session Availability</div>
+                <div class="text-slate-400 text-sm">Creativity has no clock. We're here when inspiration strikes.</div>
+              </div>
+            </div>
+          </div>
+          <a href="/about.html" class="btn-outline inline-flex mt-8">Learn Our Story</a>
+        </div>
+        <div data-aos="fade-left">
+          <div class="relative">
+            <div class="card p-2 overflow-hidden rounded-2xl">
+              <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=700&q=80"
+                alt="BAM Studio Interior" class="rounded-xl w-full object-cover" style="height:400px">
+            </div>
+            <!-- Floating cards -->
+            <div class="absolute -bottom-5 -left-5 card px-5 py-4 shadow-2xl" style="border-color:rgba(249,115,22,.3)">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center"
+                  style="background:rgba(34,197,94,.15)">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-bold text-sm">Booking Confirmed</div>
+                  <div class="text-slate-400 text-xs">Session starts in 2 hours</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -top-5 -right-5 card px-5 py-4 shadow-2xl" style="border-color:rgba(249,115,22,.3)">
+              <div class="text-center">
+                <div class="stat-number neon-text" style="font-size:1.5rem">⭐ 4.9</div>
+                <div class="text-slate-400 text-xs">200+ Reviews</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6" id="testimonials">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16" data-aos>
+        <span class="badge badge-orange mb-4 text-sm">Testimonials</span>
+        <h2 class="section-title mb-4">Artists <span class="neon-text">Love</span> BAM</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-8" data-aos>
+          <div class="flex items-center gap-1 mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-slate-300 leading-relaxed mb-6">"BAM Studio took my raw demo and turned it into a chart-topping
+            hit. The engineers are world class and the vibe is incredible."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-black"
+              style="background:linear-gradient(135deg,#f97316,#f59e0b)">A</div>
+            <div>
+              <div class="font-semibold text-sm">Adewale K.</div>
+              <div class="text-slate-500 text-xs">Afrobeats Artist</div>
+            </div>
+          </div>
+        </div>
+        <div class="card p-8" data-aos style="transition-delay:.1s;border-color:rgba(249,115,22,.3)">
+          <div class="flex items-center gap-1 mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-slate-300 leading-relaxed mb-6">"The video production team at BAM is phenomenal. My music video
+            got over 2M views in a week. Absolutely unmatched quality."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white"
+              style="background:linear-gradient(135deg,#a855f7,#6366f1)">C</div>
+            <div>
+              <div class="font-semibold text-sm">Chisom V.</div>
+              <div class="text-slate-500 text-xs">R&B Singer</div>
+            </div>
+          </div>
+        </div>
+        <div class="card p-8" data-aos style="transition-delay:.2s">
+          <div class="flex items-center gap-1 mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-slate-300 leading-relaxed mb-6">"Our podcast production quality jumped dramatically after
+            working with BAM. The soundproofing and equipment are top tier!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-black"
+              style="background:linear-gradient(135deg,#06b6d4,#3b82f6)">T</div>
+            <div>
+              <div class="font-semibold text-sm">Taiwo B.</div>
+              <div class="text-slate-500 text-xs">Podcast Host</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="card p-12"
+        style="background:linear-gradient(135deg,rgba(249,115,22,.08),rgba(168,85,247,.08));border-color:rgba(249,115,22,.25)"
+        data-aos>
+        <div class="text-5xl mb-4">🎹</div>
+        <h2 class="section-title mb-4">Ready to Create Your <span class="neon-text">Masterpiece?</span></h2>
+        <p class="section-sub mb-8">Book your studio session today. Limited slots available weekly.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="/booking.html" class="btn-primary text-lg">Book Your Session</a>
+          <a href="/contact.html" class="btn-outline text-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+              style="background:linear-gradient(135deg,#f97316,#f59e0b)"><span
+                class="font-black text-black text-lg">B</span></div>
+            <span class="font-extrabold text-lg">BAM <span class="neon-text">Studio</span></span>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed">Nigeria's premier recording, video production, and mastering
+            studio. Where legends are made.</p>
+          <div class="flex gap-3 mt-5">
+            <a href="#" class="footer-link" aria-label="Instagram"><svg width="20" height="20" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg></a>
+            <a href="#" class="footer-link" aria-label="YouTube"><svg width="20" height="20" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg></a>
+            <a href="#" class="footer-link" aria-label="Twitter/X"><svg width="20" height="20" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="/" class="footer-link text-sm">Home</a></li>
+            <li><a href="/about.html" class="footer-link text-sm">About Us</a></li>
+            <li><a href="/pricing.html" class="footer-link text-sm">Pricing</a></li>
+            <li><a href="/gallery.html" class="footer-link text-sm">Gallery</a></li>
+            <li><a href="/booking.html" class="footer-link text-sm">Book a Session</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="/booking.html" class="footer-link text-sm">Music Recording</a></li>
+            <li><a href="/booking.html" class="footer-link text-sm">Video Production</a></li>
+            <li><a href="/booking.html" class="footer-link text-sm">Mixing & Mastering</a></li>
+            <li><a href="/booking.html" class="footer-link text-sm">Podcast Studio</a></li>
+            <li><a href="/booking.html" class="footer-link text-sm">Voice-over Studio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-sm text-slate-500"><svg width="16" height="16" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="mt-0.5 flex-shrink-0">
+                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>12 Studio Avenue, Lagos, Nigeria</li>
+            <li class="flex items-center gap-2 text-sm text-slate-500"><svg width="16" height="16" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>+234 800 000 0000</li>
+            <li class="flex items-center gap-2 text-sm text-slate-500"><svg width="16" height="16" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>hello@bamstudio.ng</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+        style="border-color:var(--dark-border)">
+        <p class="text-slate-600 text-sm">© 2025 BAM Musical & Video Studio. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="footer-link text-sm">Privacy Policy</a>
+          <a href="#" class="footer-link text-sm">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Live Chat Widget -->
+  <button id="chatBtn"
+    class="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center z-50 transition-transform hover:scale-110"
+    style="background:linear-gradient(135deg,#f97316,#f59e0b)">
+    <svg width="24" height="24" fill="none" stroke="black" stroke-width="2.5" viewBox="0 0 24 24">
+      <path
+        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+  </button>
+  <!-- Chat Window -->
+  <div id="chatWindow" class="hidden fixed bottom-24 right-6 w-80 card rounded-2xl shadow-2xl z-50 overflow-hidden"
+    style="border-color:rgba(249,115,22,.3)">
+    <div class="p-4 flex items-center justify-between" style="background:linear-gradient(135deg,#f97316,#f59e0b)">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-black flex items-center justify-center font-bold text-sm">B</div>
+        <div>
+          <div class="font-bold text-black text-sm">BAM Studio</div>
+          <div class="text-xs" style="color:rgba(0,0,0,.7)">Usually replies in minutes</div>
+        </div>
+      </div>
+      <button id="closeChat" class="text-black opacity-70 hover:opacity-100"><svg width="20" height="20" fill="none"
+          stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 18L18 6M6 6l12 12" />
+        </svg></button>
+    </div>
+    <div class="p-4 space-y-3" style="min-height:180px">
+      <div class="bg-slate-800 rounded-xl rounded-tl-none p-3 text-sm max-w-xs">
+        👋 Hey! Welcome to BAM Studio. How can we help you today?
+      </div>
+    </div>
+    <div class="p-3 border-t" style="border-color:var(--dark-border)">
+      <div class="flex gap-2">
+        <input type="text" placeholder="Type a message..." class="form-input flex-1"
+          style="padding:.6rem .9rem;font-size:.875rem">
+        <button class="btn-primary" style="padding:.6rem 1rem;font-size:.875rem">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+</body>
+
+</html>

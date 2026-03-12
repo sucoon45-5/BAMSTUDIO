@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel — BAM Studio</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js" defer></script>
+    <script type="module" src="/src/admin.js" defer></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold">Admin <span class="neon-text">Panel</span></h1>
+                    <p class="text-slate-400">BAM Studio Management Dashboard</p>
+                </div>
+                <div id="adminBadge" class="badge badge-orange">Admin Access</div>
+            </div>
+
+            <!-- Not admin -->
+            <div id="notAdmin" class="card p-12 text-center hidden">
+                <div class="text-5xl mb-4">🚫</div>
+                <h3 class="text-2xl font-bold mb-2">Access Denied</h3>
+                <p class="text-slate-400">Admin access required.</p>
+                <a href="/" class="btn-outline mt-5 inline-flex">Go Home</a>
+            </div>
+
+            <div id="adminContent">
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div class="card p-5 text-center">
+                        <div class="stat-number neon-text" id="aStatTotal">—</div>
+                        <div class="text-slate-500 text-sm">Total Bookings</div>
+                    </div>
+                    <div class="card p-5 text-center">
+                        <div class="stat-number" style="color:#f59e0b;font-size:2.5rem;font-weight:900"
+                            id="aStatPending">—</div>
+                        <div class="text-slate-500 text-sm">Pending</div>
+                    </div>
+                    <div class="card p-5 text-center">
+                        <div class="stat-number" style="color:#22c55e;font-size:2.5rem;font-weight:900"
+                            id="aStatApproved">—</div>
+                        <div class="text-slate-500 text-sm">Approved</div>
+                    </div>
+                    <div class="card p-5 text-center">
+                        <div class="stat-number neon-text" id="aStatRevenue">—</div>
+                        <div class="text-slate-500 text-sm">Total Revenue</div>
+                    </div>
+                </div>
+
+                <!-- Tab Nav -->
+                <div class="flex gap-1 border-b mb-6 overflow-x-auto" style="border-color:var(--dark-border)">
+                    <button class="tab-btn active" data-tab="bookings">📋 Bookings</button>
+                    <button class="tab-btn" data-tab="payments">💳 Payments</button>
+                    <button class="tab-btn" data-tab="users">👤 Users</button>
+                </div>
+
+                <!-- Bookings Tab -->
+                <div id="tab-bookings" class="admin-tab">
+                    <div class="card overflow-x-auto">
+                        <div class="p-5 border-b flex items-center justify-between"
+                            style="border-color:var(--dark-border)">
+                            <h3 class="font-bold">All Bookings</h3>
+                            <input type="text" id="bookingSearch" placeholder="Search bookings..." class="form-input"
+                                style="width:220px;padding:.5rem .9rem;font-size:.875rem">
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Customer</th>
+                                        <th>Service</th>
+                                        <th>Date & Time</th>
+                                        <th>Price</th>
+                                        <th>Payment</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminBookingsTable">
+                                    <tr>
+                                        <td colspan="8" class="text-center py-8 text-slate-500">Loading...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payments Tab -->
+                <div id="tab-payments" class="admin-tab hidden">
+                    <div class="card overflow-x-auto">
+                        <div class="p-5 border-b" style="border-color:var(--dark-border)">
+                            <h3 class="font-bold">Payment Records</h3>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Customer</th>
+                                        <th>Service</th>
+                                        <th>Amount</th>
+                                        <th>Reference</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminPaymentsTable">
+                                    <tr>
+                                        <td colspan="7" class="text-center py-8 text-slate-500">Loading...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Tab -->
+                <div id="tab-users" class="admin-tab hidden">
+                    <div class="card overflow-x-auto">
+                        <div class="p-5 border-b" style="border-color:var(--dark-border)">
+                            <h3 class="font-bold">Registered Users</h3>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Role</th>
+                                        <th>Joined</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminUsersTable">
+                                    <tr>
+                                        <td colspan="6" class="text-center py-8 text-slate-500">Loading...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <div class="toast" id="toast"></div>
+</body>
+
+</html>

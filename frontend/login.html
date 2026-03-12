@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register — BAM Studio</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js" defer></script>
+    <script type="module" src="/src/auth.js" defer></script>
+</head>
+
+<body>
+    <div class="min-h-screen flex items-center justify-center px-6 py-16 relative overflow-hidden">
+        <div class="glow-orb"
+            style="width:500px;height:500px;background:radial-gradient(circle,#f97316,transparent);top:-200px;right:-100px;">
+        </div>
+        <div class="glow-orb"
+            style="width:400px;height:400px;background:radial-gradient(circle,#a855f7,transparent);bottom:-100px;left:-100px;animation-delay:-3s;">
+        </div>
+        <div class="w-full max-w-md" data-aos>
+            <div class="text-center mb-8">
+                <a href="/" class="inline-flex items-center gap-3 mb-8">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center"
+                        style="background:linear-gradient(135deg,#f97316,#f59e0b)"><span
+                            class="font-black text-black text-xl">B</span></div>
+                    <span class="font-extrabold text-2xl">BAM <span class="neon-text">Studio</span></span>
+                </a>
+            </div>
+
+            <!-- Tabs -->
+            <div class="card p-1 flex mb-6" style="border-radius:9999px">
+                <button id="loginTab" class="flex-1 py-2.5 rounded-full font-semibold text-sm transition-all"
+                    style="background:linear-gradient(135deg,#f97316,#f59e0b);color:#000">Login</button>
+                <button id="registerTab"
+                    class="flex-1 py-2.5 rounded-full font-semibold text-sm text-slate-400 transition-all">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="card p-8" id="loginForm">
+                <h1 class="text-2xl font-bold mb-6">Welcome Back 👋</h1>
+                <div class="space-y-4">
+                    <div class="form-group">
+                        <label class="form-label" for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" class="form-input" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" class="form-input" placeholder="••••••••">
+                    </div>
+                    <button id="loginBtn" class="btn-primary w-full text-lg mt-2">Sign In</button>
+                </div>
+                <p class="text-center text-slate-500 text-sm mt-5">Don't have an account? <button id="toRegister"
+                        class="neon-text font-semibold">Register</button></p>
+            </div>
+
+            <!-- Register Form -->
+            <div class="card p-8 hidden" id="registerForm">
+                <h1 class="text-2xl font-bold mb-6">Create Account 🎵</h1>
+                <div class="space-y-4">
+                    <div class="form-group">
+                        <label class="form-label" for="regName">Full Name</label>
+                        <input type="text" id="regName" class="form-input" placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="regEmail">Email</label>
+                        <input type="email" id="regEmail" class="form-input" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="regPhone">Phone</label>
+                        <input type="tel" id="regPhone" class="form-input" placeholder="+234 800 000 0000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="regPass">Password</label>
+                        <input type="password" id="regPass" class="form-input" placeholder="Min. 8 characters">
+                    </div>
+                    <button id="registerBtn" class="btn-primary w-full text-lg mt-2">Create Account</button>
+                </div>
+                <p class="text-center text-slate-500 text-sm mt-5">Already have an account? <button id="toLogin"
+                        class="neon-text font-semibold">Login</button></p>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+</body>
+
+</html>

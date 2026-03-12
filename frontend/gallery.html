@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — BAM Musical & Video Studio</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js" defer></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos>
+                <span class="badge badge-orange mb-4 text-sm">Gallery</span>
+                <h1 class="section-title mb-4">Behind the <span class="neon-text">Glass</span></h1>
+                <p class="section-sub">A glimpse into the world-class facilities and sessions at BAM Studio.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex gap-3 justify-center flex-wrap mb-8">
+                <button class="gallery-filter btn-primary active" data-cat="all"
+                    style="padding:.5rem 1.25rem;font-size:.875rem">All</button>
+                <button class="gallery-filter btn-outline" data-cat="recording"
+                    style="padding:.5rem 1.25rem;font-size:.875rem">Recording</button>
+                <button class="gallery-filter btn-outline" data-cat="video"
+                    style="padding:.5rem 1.25rem;font-size:.875rem">Video</button>
+                <button class="gallery-filter btn-outline" data-cat="studio"
+                    style="padding:.5rem 1.25rem;font-size:.875rem">Studio</button>
+                <button class="gallery-filter btn-outline" data-cat="artists"
+                    style="padding:.5rem 1.25rem;font-size:.875rem">Artists</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galleryGrid">
+                <div class="gallery-item rounded-2xl overflow-hidden cursor-pointer" data-cat="studio" data-aos>
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&q=80" alt="Studio A"
+                        class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                        style="height:220px">
+                </div>
+                <div class="gallery-item rounded-2xl overflow-hidden cursor-pointer" data-cat="recording" data-aos
+                    style="transition-delay:.05s">
+                    <img src="https://images.unsplash.com/photo-1519508234439-4f23643125c1?w=400&q=80"
+                        alt="Recording Session"
+                        class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                        style="height:220px">
+                </div>
+                <div class="gallery-item rounded-2xl overflow-hidden cursor-pointer" data-cat="studio" data-aos
+                    style="transition-delay:.1s">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&q=80"
+                        alt="Control Room" class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                        style="height:220px">
+                </div>
+                <div class="gallery-item rounded-2xl overflow-hidden cursor-pointer" data-cat="video" data-aos
+                    style="transition-delay:.15s">
+                    <img src="https://images.unsplash.com/photo-1542208998-f6dbcd7862b9?w=400&q=80" alt="Video Set"
+                        class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                        style="height:220px">
+                </div>
+                <div class="gallery-item rounded-2xl overflow-hidden cursor-pointer" data-cat="artists" data-aos
+                    style="transition-delay:.2s">
+                    <img src="https://images.unsplash.com/photo-1565073624497-7144a83b42e3?w=400&q=80"
+                        alt="Artist in Studio"
+                        class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                        style="height:220px">
+                </div>
+                <div class="gallery-item rounded-2xl overflow-hidden cursor-pointer" data-cat="recording" data-aos
+                    style="transition-delay:.25s">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&q=80"
+                        alt="Vocal Recording"
+                        class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                        style="height:220px">
+                </div>
+                <div class="gallery-item rounded-2xl overflow-hidden cursor-pointer" data-cat="studio" data-aos
+                    style="transition-delay:.3s">
+                    <img src="https://images.unsplash.com/photo-1466428996289-fb355538da1b?w=400&q=80" alt="Drum Room"
+                        class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                        style="height:220px">
+                </div>
+                <div class="gallery-item rounded-2xl overflow-hidden cursor-pointer" data-cat="artists" data-aos
+                    style="transition-delay:.35s">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80"
+                        alt="Artists Performance"
+                        class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                        style="height:220px">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center"
+        style="background:rgba(0,0,0,.92);backdrop-filter:blur(12px)">
+        <button id="closeLightbox"
+            class="absolute top-6 right-6 text-white opacity-70 hover:opacity-100 text-4xl">✕</button>
+        <img id="lightboxImg" src="" alt="" class="max-w-4xl max-h-screen rounded-2xl p-4 w-full object-contain">
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <div class="toast" id="toast"></div>
+    <script type="module">
+        // Gallery filter
+        document.querySelectorAll('.gallery-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.gallery-filter').forEach(b => {
+                    b.className = 'gallery-filter btn-outline'; b.style = 'padding:.5rem 1.25rem;font-size:.875rem';
+                });
+                btn.className = 'gallery-filter btn-primary active'; btn.style = 'padding:.5rem 1.25rem;font-size:.875rem';
+                const cat = btn.dataset.cat;
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+                });
+            });
+        });
+        // Lightbox
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                document.getElementById('lightboxImg').src = img.src;
+                const lb = document.getElementById('lightbox');
+                lb.classList.remove('hidden'); lb.classList.add('flex');
+            });
+        });
+        document.getElementById('closeLightbox').addEventListener('click', () => {
+            const lb = document.getElementById('lightbox');
+            lb.classList.add('hidden'); lb.classList.remove('flex');
+        });
+    </script>
+</body>
+
+</html>
