@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tab switching
     document.getElementById('loginTab')?.addEventListener('click', () => {
         switchTab('loginForm', 'registerForm');
-        document.getElementById('loginTab').style.cssText = 'background:linear-gradient(135deg,#f97316,#f59e0b);color:#000';
+        document.getElementById('loginTab').style.cssText = 'background:linear-gradient(135deg,#ef4444,#f59e0b);color:#000';
         document.getElementById('registerTab').style.cssText = 'color:#94a3b8';
     });
     document.getElementById('registerTab')?.addEventListener('click', () => {
         switchTab('registerForm', 'loginForm');
-        document.getElementById('registerTab').style.cssText = 'background:linear-gradient(135deg,#f97316,#f59e0b);color:#000';
+        document.getElementById('registerTab').style.cssText = 'background:linear-gradient(135deg,#ef4444,#f59e0b);color:#000';
         document.getElementById('loginTab').style.cssText = 'color:#94a3b8';
     });
     document.getElementById('toRegister')?.addEventListener('click', () =>

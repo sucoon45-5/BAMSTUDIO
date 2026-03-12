@@ -24,7 +24,7 @@ function renderBookings(bookings) {
         return;
     }
     el.innerHTML = `<div class="space-y-4">${bookings.map(b => `
-    <div class="card p-5" style="border-color:${b.status === 'approved' ? 'rgba(34,197,94,.25)' : b.status === 'cancelled' ? 'rgba(239,68,68,.2)' : 'rgba(249,115,22,.15)'}">
+    <div class="card p-5" style="border-color:${b.status === 'approved' ? 'rgba(34,197,94,.25)' : b.status === 'cancelled' ? 'rgba(239,68,68,.2)' : 'rgba(239,68,68,.15)'}">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <div>
           <div class="flex items-center gap-3 mb-1 flex-wrap">

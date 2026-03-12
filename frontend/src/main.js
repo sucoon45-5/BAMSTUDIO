@@ -4,7 +4,7 @@ const NAV_HTML = `
 <nav class="navbar py-4 px-6" id="navbar">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
     <a href="/" class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#f97316,#f59e0b)">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#ef4444,#f59e0b)">
         <span class="font-black text-black text-lg">B</span>
       </div>
       <span class="font-extrabold text-lg tracking-tight">BAM <span class="neon-text">Studio</span></span>
@@ -40,7 +40,7 @@ const FOOTER_HTML = `
     <div class="grid md:grid-cols-4 gap-8 mb-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#f97316,#f59e0b)"><span class="font-black text-black text-lg">B</span></div>
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#ef4444,#f59e0b)"><span class="font-black text-black text-lg">B</span></div>
           <span class="font-extrabold text-lg">BAM <span class="neon-text">Studio</span></span>
         </div>
         <p class="text-slate-500 text-sm">Nigeria's premier studio. Turning visions into sonic masterpieces.</p>

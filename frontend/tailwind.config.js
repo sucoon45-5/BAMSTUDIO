@@ -4,7 +4,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                neon: { DEFAULT: '#f97316', gold: '#f59e0b', purple: '#a855f7', cyan: '#06b6d4' },
+                neon: { DEFAULT: '#ef4444', gold: '#f59e0b', purple: '#a855f7', cyan: '#06b6d4' },
                 dark: { DEFAULT: '#0a0a0f', card: '#111118', border: '#1e1e2e' },
             },
             fontFamily: { sans: ['Inter', 'sans-serif'] },
