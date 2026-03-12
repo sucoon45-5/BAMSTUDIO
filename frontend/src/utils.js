@@ -1,5 +1,6 @@
 // Shared utility functions
-export const API = 'http://localhost:5000/api';
+const prod = window.location.hostname !== 'localhost';
+export const API = prod ? '/api' : 'http://localhost:5000/api';
 
 export function getToken() {
     return localStorage.getItem('bam_token');
